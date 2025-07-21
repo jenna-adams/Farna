@@ -1,0 +1,12 @@
+# Exported from Render on 2025-07-21T20:08:25Z
+databases:
+- name: farna-postgresql
+  databaseName: farna_postgresql
+  user: farna_postgresql_user
+  plan: free
+  region: oregon
+  ipAllowList:
+  - source: 0.0.0.0/0
+    description: everywhere
+  postgresMajorVersion: "16"
+version: "1"
