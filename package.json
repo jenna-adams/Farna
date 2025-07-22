@@ -1,0 +1,21 @@
+{
+  "name": "farna",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Farna is a collection of web services that act as the glue between backend systems and the Eleos Platform.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^17.2.0",
+    "pg": "^8.16.3"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  }
+}
