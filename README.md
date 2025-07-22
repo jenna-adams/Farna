@@ -22,6 +22,7 @@ It's important to emphasize separation of concerns, which is why each folder/fil
 
 ## Need to download
 
+- npm
 - Node.js
 - Nodemon
 - Express
