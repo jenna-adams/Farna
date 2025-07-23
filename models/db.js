@@ -1,16 +1,21 @@
-// models/db.js
-import pg from 'pg';
-import dotenv from 'dotenv';
+// This file creates the PostgreSQL database client
 
-const {Client} = pg;
+import pg from 'pg';         // PostgreSQL client library
+import dotenv from 'dotenv'; // Load environment variables from .env
+
+const { Client } = pg;
 dotenv.config();
+
+// Create a new DB client using DATABASE_URL from the environment
 const client = new Client({
-  connectionString: "postgresql://farna_postgresql_user:bFWhWJY5T5G2TbH6qdWrQKvmoBrkE956@dpg-d1mlufq4d50c73b06250-a.oregon-postgres.render.com/farna_postgresql",
+  connectionString: process.env.DATABASE_URL,
   ssl: {
-    rejectUnauthorized: false
+    rejectUnauthorized: false // Required by some cloud DBs (e.g., Render)
   }
 });
 
+// Connect to the database
 client.connect();
 
+// Export the client so it can be used in other files
 export default client;
