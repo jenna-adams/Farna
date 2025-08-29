@@ -1,0 +1,4 @@
+# Sensitive files and secrets
+.env
+# dependencies
+node_modules/
