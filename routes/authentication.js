@@ -1,4 +1,4 @@
-// This file defines all routes under the /auth path
+// This file defines all routes under the /auth path to get to a certain
 
 import express from 'express';
 import { handleGetAuth, handlePostAuth } from '../controllers/authController.js';
@@ -10,8 +10,8 @@ const router = express.Router();
 router.get('/:token', handleGetAuth);
 
 // POST /auth/login — attempts to log in using username/password
-// Farris to do
-
+// Farris to do - This will use the username and password which is passed through the body and does not require url parameters
+router.post('/', handlePostAuth);
 
 // Export the router so it can be mounted in index.js
 export default router;

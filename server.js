@@ -1,23 +1,26 @@
 // Import the Express library (used to create the web server)
 import express from 'express';
+import bodyParser from 'body-parser';
 const app = express();
 
 // Set the port to 3000, or use the value from the environment
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 3003;
 
 // Import the route definitions (e.g. /auth routes)
 import routes from './routes/index.js';
 
 // Allow the app to accept and parse JSON in request bodies
 app.use(express.json());
-
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: true}));
 // Simple test route for the root path
+
 app.get('/', (req, res) => {
   res.send('Server is working!');
 });
 
 // Import the database client
-import Client from './models/db.js';
+import Client from './models/client_db.js';
 
 // Immediately test the database connection by running a simple query
 Client.query('SELECT NOW()', (err, res) => {
