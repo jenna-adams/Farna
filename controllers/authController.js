@@ -1,10 +1,11 @@
 //Import service functions that contain the actual logic
-import {getUserByCreds} from '../services/authService.js';
+import {getUserByCreds, getUserByToken} from '../services/authService.js';
 
 // POST /auth/login handler
 // Farris to do
 export const handlePostAuth = async (req, res) => {
-const eleoskey = req.headers['eleos-platform-key'];
+console.log ('beginning of handlepostuath');
+  const eleoskey = req.headers['eleos-platform-key'];
 try { if (eleoskey === process.env.ELEOS_PLATFORM_KEY)
   {
     // Call the login logic from the service, passing the request body

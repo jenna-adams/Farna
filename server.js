@@ -4,7 +4,7 @@ import bodyParser from 'body-parser';
 const app = express();
 
 // Set the port to 3000, or use the value from the environment
-const port = process.env.PORT || 3003;
+const port = process.env.PORT || 3005;
 
 // Import the route definitions (e.g. /auth routes)
 import routes from './routes/index.js';
