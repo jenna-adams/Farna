@@ -42,7 +42,7 @@ export const getUserByToken = async (api_token) => {
 
   //If no matching user, throw an error
   if (result.rows.length === 0) {
-   throw new Error('Token invalid');
+   throw new Error('Token invalid '+api_token);
  }
 
  //Return the found user

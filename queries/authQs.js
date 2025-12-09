@@ -5,6 +5,6 @@ export const authQs = {
 	// Farris to do
 	getUser: `SELECT * FROM users WHERE username = $1 and password = $2`,
   
-	// SQL to fetch user by token
-	getUserByToken: `SELECT full_name, api_token, dashboard_code, menu_code FROM users WHERE api_token = $1`,
+	// SQL to fetch user by full_name
+	getUserByToken: `SELECT full_name, api_token, dashboard_code, menu_code FROM users WHERE full_name = $1`,
   };
