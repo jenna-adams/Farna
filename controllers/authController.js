@@ -1,5 +1,9 @@
 //Import service functions that contain the actual logic
-import { getUserByCreds, getUserByToken } from "../services/authService.js";
+import {
+  getUserByCreds,
+  getUserByToken,
+  updateUserToken,
+} from "../services/authService.js";
 import { jwtDecode } from "jwt-decode"; // use jwt decode function to decode demo service api token
 // POST /auth/login handler
 export const handlePostAuth = async (req, res) => {
@@ -29,11 +33,15 @@ export const handleGetAuth = async (req, res) => {
     if (eleoskey === process.env.ELEOS_PLATFORM_KEY) {
       const decoded_api_token = jwtDecode(req.params.token); //saving token
       const api_token = Object.values(decoded_api_token)[0];
+
       console.log("set token:", api_token);
       // const (constant variable) means things should not change for the duration of the code
       try {
         // Try to get the user associated with this token and if not then throw an error
+        const update = await updateUserToken(req.params.token, api_token);
+        console.log("where you at");
         const user_data = await getUserByToken(api_token);
+        console.log(user_data);
         res.status(200).json(user_data);
       } catch (error) {
         // Send back a general error if the token is invalid

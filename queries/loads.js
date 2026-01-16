@@ -20,4 +20,6 @@ loads_per_user as (
   where token = $1
 )
 select * from loads_per_user;`,
+
+UpdateLoadAssignmentToken: `UPDATE load_assignments SET token = $1 WHERE username = $2`,
   };

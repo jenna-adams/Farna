@@ -15,3 +15,9 @@ const load_data = await client.query(loads.getLoads,[token]);
   // Run the SQL query to find a matching loads 
   // If no load found, throw an error
   // Return the found load
+
+  //updateloadassignmentbyusertoken
+export const UpdateLoadAssignmentToken = async (token, username) => {
+  console.log("updating user token" + token);
+  client.query(loads.UpdateLoadAssignmentToken, [token, username]);
+};
