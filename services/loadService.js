@@ -10,8 +10,8 @@ const load_data = await client.query(loads.getLoads,[token]);
    throw new Error('incorrect token');
   }
   console.log("MY DATA STRUCTURE:", JSON.stringify(load_data, null, 2));
-  console.log (load_data.rows[0]);
-  return load_data.rows[0];
+  console.log (load_data.rows);
+  return load_data.rows;
 };
   // Run the SQL query to find a matching loads 
   // If no load found, throw an error
