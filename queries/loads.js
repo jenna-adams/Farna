@@ -19,7 +19,7 @@ loads_per_user as (
     on load_assignments.load_id= load_and_stop_data.id
   where token = $1
 )
-select id, display_identifier, sort, order_number, load_status, load_status_label, active, current, enable_map_interaction_in_navigation, allow_reporting_issue_in_navigation, stops from loads_per_user;`,
+select id, display_identifier, sort, order_number, load_status, load_status_label, active, current, enable_map_interaction_in_navigation, allow_reporting_issue_in_navigation, stops, workflow_code from loads_per_user;`,
 
 UpdateLoadAssignmentToken: `UPDATE load_assignments SET token = $1 WHERE username = $2`,
   };
