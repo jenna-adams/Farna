@@ -9,6 +9,7 @@ const load_data = await client.query(loads.getLoads,[token]);
   if (load_data.rows.length === 0) {
    throw new Error('incorrect token');
   }
+  console.log("MY DATA STRUCTURE:", JSON.stringify(load_data, null, 2));
   console.log (load_data.rows[0]);
   return load_data.rows[0];
 };

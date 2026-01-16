@@ -6,9 +6,9 @@ export const loads = {
 	getLoads: `with load_and_stop_data as (
   SELECT loads.*,
     (
-      SELECT jsonb_agg(stops ORDER BY array_position(loads.stop_ids, stops.stop_id))
+      SELECT jsonb_agg(stops ORDER BY array_position(loads.stop_ids, stops.stop_number))
       FROM stops
-      WHERE stops.stop_id = ANY(loads.stop_ids)
+      WHERE stops.stop_number = ANY(loads.stop_ids)
     ) as stops
   FROM loads
 ),
